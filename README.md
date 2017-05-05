@@ -37,15 +37,25 @@ visible after running:
 
 
 An example execution of the ACS-GPU-Alt (the faster version of the ACS-GPU) could be started with:
+
     ./gpuants --test tsp/rat783.tsp  --outdir results/ --alg acs_gpu_alt
     --iter 10000
 
 where
+- --alg is the name of the algorithm to run.
 - --iter is the number of the ACS iterations to execute,
 - --test is the path to the TSP data instance,
 - --outdir is the path to a directory in which a file with results should be
   created. Results are saved in JSON format (*.js)
 
+Valid values for the --alg argument:
+- acs - a serial version of the "standard" ACS
+- acs_spm  - a serial version of the ACS but with the Selective Pheromone Memory (SPM)
+  instead of a full matrix
+- acs_gpu - a GPU version of the ACS
+- acs_gpu_alt - an optimized GPU version of the ACS
+- acs_spm_gpu - a GPU version of the ACS with the Selective Pheromone Memory
+  (SPM)
 
 # License
 
